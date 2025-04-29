@@ -10,12 +10,14 @@ public class QuestionListManager : MonoBehaviour
     public GameObject questionItemPrefab;
     public QuestionEditor editor;
 
+    public List<QuestionData> questionList = new List<QuestionData>();
+
     void LoadQuestions()
     {
         foreach (var question in questionList)
         {
             GameObject item = Instantiate(questionItemPrefab, contentPanel);
-            item.GetComponentInChildren<Text>().text = question.title;
+            item.GetComponentInChildren<Text>().text = question.mode;
             item.transform.Find("EditButton").GetComponent<Button>().onClick.AddListener(() => {
                 editor.LoadQuestion(question);
             });
