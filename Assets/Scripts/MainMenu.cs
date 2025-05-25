@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // ตั้งค่าปุ่มใน Inspector
+        transform.Find("StartButton").GetComponent<Button>().onClick.AddListener(() => GameManager.Instance.StartGame());
+        transform.Find("ExitButton").GetComponent<Button>().onClick.AddListener(() => GameManager.Instance.QuitGame());
     }
 }
