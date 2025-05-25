@@ -49,7 +49,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
         if (isGameActive)
         {
             timeRemaining -= Time.deltaTime;
-            timerText.text = $"เวลา: {Mathf.RoundToInt(timeRemaining)} วินาที";
+            timerText.text = $"Time: {Mathf.RoundToInt(timeRemaining)} S";
 
             
         }
@@ -60,7 +60,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
         score = 0;
         timeRemaining = 30f;
         isGameActive = true;
-        scoreText.text = $"คะแนน: {score}";
+        scoreText.text = $"Score: {score}";
 
         GetRandomQuestion();
     }
@@ -118,7 +118,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
         if (buttonIndex == currentQuestion.correctAnswerIndex)
         {
             score += 10;
-            scoreText.text = $"คะแนน: {score}";
+            scoreText.text = $"Score: {score}";
             timeRemaining += 3f;
 
             // เปลี่ยนสีข้อความแทนการเปลี่ยนสีปุ่ม
@@ -127,7 +127,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
         else
         {
             score = Mathf.Max(0, score - 5);
-            scoreText.text = $"คะแนน: {score}";
+            scoreText.text = $"Score: {score}";
             timeRemaining = Mathf.Max(1f, timeRemaining - 2f);
 
             answerTexts[buttonIndex].color = Color.red;
