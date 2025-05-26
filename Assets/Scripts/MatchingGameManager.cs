@@ -1,47 +1,60 @@
 using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MatchingGameManager : MonoBehaviour
 {
-    public static MatchingGameManager instance;
+    public float timeLimit = 60f; // ระยะเวลาเริ่มต้น (วินาที)
+    private float timer;
+    private bool gameEnded = false;
 
-    public List<DropZone> allDropZones = new List<DropZone>();
-    public int correctMatches = 0;
-    public int totalMatches = 0;
+    public TMP_Text timerText; // UI แสดงเวลา
+    public DropZone[] dropZones; // DropZone ทั้งหมดในฉาก
 
-    private void Awake()
+    void Start()
     {
-        if (instance == null)
+        timer = timeLimit;
+    }
+
+    void Update()
+    {
+        if (gameEnded) return;
+
+        timer -= Time.deltaTime;
+        UpdateTimerUI();
+
+        if (timer <= 0)
         {
-            instance = this;
+            EndGame();
         }
-        else
+
+        if (AllMatched())
         {
-            Destroy(gameObject);
+            EndGame();
         }
     }
 
-    private void Start()
+    void UpdateTimerUI()
     {
-        totalMatches = allDropZones.Count;
+        if (timerText != null)
+        {
+            timerText.text = "Time: " + Mathf.CeilToInt(timer).ToString();
+        }
     }
 
-    public void CheckGameCompletion()
+    bool AllMatched()
     {
-        correctMatches = 0;
-
-        foreach (DropZone zone in allDropZones)
+        foreach (var zone in dropZones)
         {
-            if (zone.matchedItem != null)
-            {
-                correctMatches++;
-            }
+            if (zone.matchedItem == null)
+                return false;
         }
+        return true;
+    }
 
-        if (correctMatches == totalMatches)
-        {
-            Debug.Log("เกมจบ! คุณชนะ!");
-            // แสดงหน้าจอชนะหรือเอฟเฟกต์
-        }
+    void EndGame()
+    {
+        gameEnded = true;
+        SceneManager.LoadScene("ChooseRoom");
     }
 }
