@@ -114,7 +114,7 @@ public class HintQuizGame : MonoBehaviour
             }
         }
 
-        scoreText.text = "¤Ðá¹¹: " + score;
+        scoreText.text = "Score: " + score;
         isAnswered = true;
         nextButton.SetActive(true);
     }
