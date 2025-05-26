@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 363836357}
   - component: {fileID: 363836356}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QuestText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 479801524}
   - component: {fileID: 479801523}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -230.34738, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 1106802225}
   - component: {fileID: 1106802224}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: AnsButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1137,7 +1137,7 @@ GameObject:
   - component: {fileID: 1292787705}
   - component: {fileID: 1292787704}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: AnsButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1299,7 +1299,6 @@ MonoBehaviour:
   questionText: {fileID: 363836356}
   scoreText: {fileID: 1471843957}
   timerText: {fileID: 479801523}
-  finalScoreText: {fileID: 0}
   answerButtons:
   - {fileID: 1942941271}
   - {fileID: 1292787704}
@@ -1337,7 +1336,7 @@ GameObject:
   - component: {fileID: 1471843958}
   - component: {fileID: 1471843957}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1445,7 +1444,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -228.45929, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1472,7 +1471,7 @@ GameObject:
   - component: {fileID: 1572938552}
   - component: {fileID: 1572938551}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: AnsButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1861,7 +1860,7 @@ GameObject:
   - component: {fileID: 1942941272}
   - component: {fileID: 1942941271}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AnsButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
