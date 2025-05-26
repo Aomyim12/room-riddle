@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 
 public class SpeedQuizGameTMP : MonoBehaviour
 {
@@ -51,7 +53,11 @@ public class SpeedQuizGameTMP : MonoBehaviour
             timeRemaining -= Time.deltaTime;
             timerText.text = $"Time: {Mathf.RoundToInt(timeRemaining)} S";
 
-            
+            if (timeRemaining <= 0f)
+            {
+                isGameActive = false;
+                SceneManager.LoadScene("ChooseRoom"); // เปลี่ยนชื่อ Scene ให้ตรงกับที่ตั้งไว้ใน Build Settings
+            }
         }
     }
 
