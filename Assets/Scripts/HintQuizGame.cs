@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class HintQuizGame : MonoBehaviour
 {
@@ -57,13 +58,7 @@ public class HintQuizGame : MonoBehaviour
             // แสดงใบ้แรก
             ShowHint(0);
         }
-        else
-        {
-            // ถ้าคำถามหมด
-            resultText.text = "เกมจบ! คะแนนรวม: " + score;
-            submitButton.gameObject.SetActive(false);
-            answerInput.gameObject.SetActive(false);
-        }
+        
     }
 
     void ShowHint(int index)
@@ -92,7 +87,7 @@ public class HintQuizGame : MonoBehaviour
             int points = (3 - currentHintIndex) * 10; // ได้คะแนนมากขึ้นถ้าตอบด้วยใบ้น้อยข้อ
             score += points;
 
-            resultText.text = "ถูกต้อง! +" + points + " คะแนน";
+            resultText.text = "Nice! +" + points + " Point";
             resultText.color = Color.green;
         }
         else
@@ -102,14 +97,14 @@ public class HintQuizGame : MonoBehaviour
             {
                 // แสดงใบ้เพิ่มถ้ายังมี
                 ShowHint(currentHintIndex + 1);
-                resultText.text = "ไม่ถูกต้อง ลองดูใบ้เพิ่ม!";
+                resultText.text = "Nahh! See more";
                 resultText.color = Color.red;
                 return;
             }
             else
             {
                 // แสดงคำตอบถ้าใช้ใบ้ครบแล้ว
-                resultText.text = "เสียใจด้วย! คำตอบคือ: " + currentQuiz.answer;
+                resultText.text = "Nice Try! The answer is: " + currentQuiz.answer;
                 resultText.color = Color.red;
             }
         }
@@ -121,6 +116,14 @@ public class HintQuizGame : MonoBehaviour
 
     public void NextQuestion()
     {
-        GetRandomQuestion();
+        if (quizItems.Count > 0)
+        {
+            GetRandomQuestion();
+        }
+        else
+        {
+            SceneManager.LoadScene("ChooseRoom");
+        }
     }
+
 }

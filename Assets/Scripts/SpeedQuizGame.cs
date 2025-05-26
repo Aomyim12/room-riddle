@@ -158,8 +158,14 @@ public class SpeedQuizGameTMP : MonoBehaviour
         {
             GetRandomQuestion();
         }
-       
+        else
+        {
+            // เมื่อคำถามหมด
+            isGameActive = false;
+            SceneManager.LoadScene("ChooseRoom");
+        }
     }
 
-   
+
+
 }
