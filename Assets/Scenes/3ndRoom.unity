@@ -1119,11 +1119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quizItems:
-  - answer: 
+  - answer: Tung Tung Tung Tung Sahur
     hints:
-    - 
-    - 
-    - 
+    - Wood
+    - Baseball bat
+    - Italian
   hintTexts:
   - {fileID: 127746695}
   - {fileID: 527354723}
