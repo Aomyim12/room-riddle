@@ -3,15 +3,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+
 public class SortWord : MonoBehaviour
 {
-    [Header("Answer Settings")]
-    public string correctAnswer = "ABC"; // คำตอบที่ถูก
-    public Transform answerSlotParent; // Grid ช่องคำตอบ
-    public GameObject answerSlotPrefab;
+    [Header("Question Settings")]
+    public List<QuestionData> questions = new List<QuestionData>();
+    private int currentQuestionIndex = 0;
 
-    [Header("Letter Grid")]
+    [Header("UI References")]
+    public TextMeshProUGUI questionText;
+    public TextMeshProUGUI progressText;
+    public Transform answerSlotParent;
     public Transform letterGridParent;
+    public GameObject answerSlotPrefab;
     public GameObject letterButtonPrefab;
     public Button shuffleButton;
 
@@ -22,37 +27,40 @@ public class SortWord : MonoBehaviour
 
     void Start()
     {
-        SetupAnswerSlots();
-        SetupLetterGrid();
+        LoadQuestion();
         shuffleButton.onClick.AddListener(ShuffleLetters);
     }
 
-    void SetupAnswerSlots()
+    void LoadQuestion()
     {
+        // เคลียร์ UI เดิม
         foreach (Transform child in answerSlotParent)
+            Destroy(child.gameObject);
+        foreach (Transform child in letterGridParent)
             Destroy(child.gameObject);
 
         answerSlots.Clear();
+        letterButtons.Clear();
+        currentAnswer = "";
 
-        foreach (char c in correctAnswer)
+        // ดึงคำถามปัจจุบัน
+        QuestionData q = questions[currentQuestionIndex];
+        questionText.text = q.questionText;
+        progressText.text = $"{currentQuestionIndex + 1}/{questions.Count}";
+
+        // สร้างช่องคำตอบ
+        foreach (char c in q.correctAnswer)
         {
             GameObject slot = Instantiate(answerSlotPrefab, answerSlotParent);
             TextMeshProUGUI slotText = slot.GetComponentInChildren<TextMeshProUGUI>();
             slotText.text = "";
             answerSlots.Add(slotText);
         }
-    }
 
-    void SetupLetterGrid()
-    {
-        foreach (Transform child in letterGridParent)
-            Destroy(child.gameObject);
+        // สร้างปุ่มตัวอักษร
+        List<char> letters = new List<char>(q.correctAnswer.ToCharArray());
 
-        letterButtons.Clear();
-
-        List<char> letters = new List<char>(correctAnswer.ToCharArray());
-
-        // ใส่ตัวอักษรหลอก (extra letters)
+        // เพิ่มตัวหลอกให้ครบ 9 ตัว
         while (letters.Count < 9)
         {
             char randomChar = (char)('A' + Random.Range(0, 26));
@@ -85,7 +93,7 @@ public class SortWord : MonoBehaviour
             }
         }
 
-        if (currentAnswer.Length == correctAnswer.Length)
+        if (currentAnswer.Length == questions[currentQuestionIndex].correctAnswer.Length)
         {
             CheckAnswer();
         }
@@ -93,14 +101,28 @@ public class SortWord : MonoBehaviour
 
     void CheckAnswer()
     {
-        if (currentAnswer == correctAnswer)
+        string correct = questions[currentQuestionIndex].correctAnswer;
+
+        if (currentAnswer == correct)
         {
-            Debug.Log("Correct!");
-            // TODO: แสดง Scroll ปลดล็อก
+            Debug.Log("✅ Correct!");
+
+            // ถ้ายังมีข้อถัดไป
+            if (currentQuestionIndex < questions.Count - 1)
+            {
+                currentQuestionIndex++;
+                LoadQuestion();
+            }
+            else
+            {
+                Debug.Log("🎉 All questions completed!");
+                progressText.text = "Completed!";
+                questionText.text = "You’ve finished all words!";
+            }
         }
         else
         {
-            Debug.Log("Wrong!");
+            Debug.Log("❌ Wrong!");
             ResetAnswer();
         }
     }
@@ -117,8 +139,7 @@ public class SortWord : MonoBehaviour
 
     void ShuffleLetters()
     {
-        SetupLetterGrid();
-        ResetAnswer();
+        LoadQuestion();
     }
 
     void ShuffleList<T>(List<T> list)

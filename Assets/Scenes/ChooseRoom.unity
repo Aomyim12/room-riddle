@@ -324,9 +324,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNames:
-  - 1stRoom
+  - pairRoom
   - 2ndRoom
-  - 3ndRoom
+  - SortWord
   delayBeforeLoad: 0.5
 --- !u!1 &1439158999
 GameObject:

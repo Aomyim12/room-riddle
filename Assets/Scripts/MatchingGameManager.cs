@@ -4,12 +4,16 @@ using TMPro;
 
 public class MatchingGameManager : MonoBehaviour
 {
-    public float timeLimit = 60f; // ระยะเวลาเริ่มต้น (วินาที)
+    [Header("Game Settings")]
+    public float timeLimit = 60f; // เวลาเริ่มต้น (วินาที)
     private float timer;
     private bool gameEnded = false;
 
-    public TMP_Text timerText; // UI แสดงเวลา
-    public DropZone[] dropZones; // DropZone ทั้งหมดในฉาก
+    [Header("UI")]
+    public TMP_Text timerText; // ตัวแสดงเวลา
+
+    [Header("Game Elements")]
+    public DropSlot[] dropSlots; // DropSlot ทั้งหมดในฉาก
 
     void Start()
     {
@@ -25,12 +29,12 @@ public class MatchingGameManager : MonoBehaviour
 
         if (timer <= 0)
         {
-            EndGame();
+            EndGame("Time Up!");
         }
 
         if (AllMatched())
         {
-            EndGame();
+            EndGame("All Matched!");
         }
     }
 
@@ -38,23 +42,30 @@ public class MatchingGameManager : MonoBehaviour
     {
         if (timerText != null)
         {
-            timerText.text = "Time: " + Mathf.CeilToInt(timer).ToString();
+            timerText.text = $"Time: {Mathf.CeilToInt(timer)}";
         }
     }
 
     bool AllMatched()
     {
-        foreach (var zone in dropZones)
+        foreach (var zone in dropSlots)
         {
-            if (zone.matchedItem == null)
+            if (zone == null || zone.matchedItem == null)
                 return false;
         }
         return true;
     }
 
-    void EndGame()
+    void EndGame(string reason)
     {
         gameEnded = true;
+        timerText.text = reason;
+        Invoke(nameof(LoadNextScene), 2f); // หน่วง 2 วิค่อยไป
+    }
+
+    void LoadNextScene()
+    {
         SceneManager.LoadScene("ChooseRoom");
     }
+
 }

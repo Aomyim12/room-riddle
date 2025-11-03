@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class RandomSceneLoader : MonoBehaviour
 {
     [Header("Scene Settings")]
-    public string[] sceneNames = { "1stRoom", "2ndRoom", "3ndRoom" };
+    public string[] sceneNames = { "pairRoom", "2ndRoom", "SortWord" };
     public float delayBeforeLoad = 0.5f;
 
     private Button button;
