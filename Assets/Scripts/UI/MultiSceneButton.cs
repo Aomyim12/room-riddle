@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+
+    [SerializeField]
+    public GameObject settingPanel;
+
     // Call this function from your button OnClick() event
     public void ChangeScene(string sceneName)
     {
@@ -21,5 +25,18 @@ public class SceneChanger : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    public void OpenSetting()
+    {
+        settingPanel.SetActive(true);
+        Time.timeScale = 0f; // หยุดเกมชั่วคราว (ใช้ในเกม)
+    }
+
+    // เรียกใช้เมื่อกดปุ่ม Close
+    public void CloseSetting()
+    {
+        settingPanel.SetActive(false);
+        Time.timeScale = 1f; // กลับมาเล่นต่อ
     }
 }
