@@ -380,9 +380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNames:
-  - 1stRoom
+  - pairRoom
   - 2ndRoom
-  - 3ndRoom
+  - SortWord
   delayBeforeLoad: 0.5
 --- !u!114 &1439159002
 MonoBehaviour:
@@ -817,9 +817,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNames:
-  - 1stRoom
+  - pairRoom
   - 2ndRoom
-  - 3ndRoom
+  - SortWord
   delayBeforeLoad: 0.5
 --- !u!114 &2111740890
 MonoBehaviour:
