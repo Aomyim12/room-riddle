@@ -628,6 +628,18 @@ MonoBehaviour:
           m_StringArgument: Lobby
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1882919012}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &341166710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,6 +1230,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1882919012}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &545877550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,6 +1441,18 @@ MonoBehaviour:
       - m_Target: {fileID: 800518971}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: CloseSetting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1882919012}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2099,7 +2135,7 @@ MonoBehaviour:
       - m_Target: {fileID: 459634205}
         m_TargetAssemblyTypeName: AudioSetting, Assembly-CSharp
         m_MethodName: OnMasterChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2540,7 +2576,7 @@ MonoBehaviour:
       - m_Target: {fileID: 459634205}
         m_TargetAssemblyTypeName: AudioSetting, Assembly-CSharp
         m_MethodName: OnSEChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3327,6 +3363,18 @@ MonoBehaviour:
           m_StringArgument: ChooseRoom
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1882919012}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1815211334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3460,7 +3508,7 @@ MonoBehaviour:
       - m_Target: {fileID: 459634205}
         m_TargetAssemblyTypeName: AudioSetting, Assembly-CSharp
         m_MethodName: OnBGMChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3958,6 +4006,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5285137417885472476, guid: 4ed1057f030e01546b66b69273dde4fe, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b658a48f8b724c4c87a6ee429781793, type: 3}
     - target: {fileID: 7789031782123767322, guid: 4ed1057f030e01546b66b69273dde4fe, type: 3}
       propertyPath: m_Name
       value: AudioManager
