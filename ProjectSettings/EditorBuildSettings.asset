@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CreateScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 58142cef782a679459287e5fafa5d633
+  - enabled: 1
     path: Assets/Scenes/ChooseRoom.unity
     guid: 1ea77c1f138a05043896c9672502e304
   - enabled: 1
