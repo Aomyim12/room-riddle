@@ -91,7 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pairID: 
-  labelText: {fileID: 0}
+  labelText: {fileID: 6464137829885355982}
+  isLocked: 0
 --- !u!225 &3610616680229416240
 CanvasGroup:
   m_ObjectHideFlags: 0

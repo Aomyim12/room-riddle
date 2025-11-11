@@ -457,12 +457,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - questionText: faaffaf
-    correctAnswer: GAME
-  - questionText: affafaf
-    correctAnswer: OK
-  - questionText: ggsgg
-    correctAnswer: APPLE
+  - questionText: Do we ___ any plan before starting the game?
+    correctAnswer: HAVE
+  - questionText: Did anyone think before jumping off that cliff?
+    correctAnswer: NO
+  - questionText: What are we clearly missing today?
+    correctAnswer: BRAIN
   questionText: {fileID: 1021900862}
   progressText: {fileID: 1546435319}
   answerSlotParent: {fileID: 463150104}
@@ -498,6 +498,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1097568985}
     m_Modifications:
+    - target: {fileID: 358977411674700601, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487106718893515991, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 980
+      objectReference: {fileID: 0}
+    - target: {fileID: 487106718893515991, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 72.5045
+      objectReference: {fileID: 0}
+    - target: {fileID: 487106718893515991, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00098419
+      objectReference: {fileID: 0}
+    - target: {fileID: 487106718893515991, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 363.8138
+      objectReference: {fileID: 0}
     - target: {fileID: 836208047336050542, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.48
@@ -614,9 +634,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4849639678539320338, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849639678539320338, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849639678539320338, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849639678539320338, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849639678539320338, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849639678539320338, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8064433190145221751, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
       propertyPath: m_Name
       value: SortWord
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165738082641296078, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165738082641296078, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165738082641296078, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165738082641296078, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165738082641296078, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165738082641296078, guid: f92f86c9d7febaf48861072e2dd1e7a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 
 
 public class SortWord : MonoBehaviour
@@ -118,6 +118,8 @@ public class SortWord : MonoBehaviour
                 Debug.Log("🎉 All questions completed!");
                 progressText.text = "Completed!";
                 questionText.text = "You’ve finished all words!";
+
+                Invoke("ReturnMenu", 2f);
             }
         }
         else
@@ -151,5 +153,9 @@ public class SortWord : MonoBehaviour
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+    void ReturnMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
