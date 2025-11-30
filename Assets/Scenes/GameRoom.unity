@@ -2731,6 +2731,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -340
       objectReference: {fileID: 0}
+    - target: {fileID: 4932578723082961800, guid: 62f566483139cff4d8aea90f010b94af, type: 3}
+      propertyPath: pairID
+      value: 1+1
+      objectReference: {fileID: 0}
     - target: {fileID: 6043306370080166325, guid: 62f566483139cff4d8aea90f010b94af, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2754,6 +2758,14 @@ PrefabInstance:
     - target: {fileID: 6043306370080166325, guid: 62f566483139cff4d8aea90f010b94af, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -550
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051260656901508297, guid: 62f566483139cff4d8aea90f010b94af, type: 3}
+      propertyPath: pairID
+      value: 1+1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051260656901508297, guid: 62f566483139cff4d8aea90f010b94af, type: 3}
+      propertyPath: hintText
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6547224978257636438, guid: 62f566483139cff4d8aea90f010b94af, type: 3}
       propertyPath: m_Color.a
@@ -5286,20 +5298,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - questionText: 1-1
+  - questionText: 
     answers:
-    - 0
-    - 1
-    - 2
-    - 3
+    - 
+    - 
+    - 
+    - 
     correctAnswerIndex: 0
-  - questionText: 1+1
+  - questionText: 
     answers:
-    - 2
-    - 3
-    - 4
-    - 11
-    correctAnswerIndex: 1
+    - 
+    - 
+    - 
+    - 
+    correctAnswerIndex: 0
   questionText: {fileID: 521684985}
   scoreText: {fileID: 521684984}
   timerText: {fileID: 521684983}
@@ -5327,8 +5339,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - questionText: Do you ___ any idea what's going on?
-    correctAnswer: HAVE
+  - questionText: 
+    correctAnswer: 
+  - questionText: 
+    correctAnswer: 
+  - questionText: 
+    correctAnswer: 
+  - questionText: 
+    correctAnswer: 
   questionText: {fileID: 656554247}
   progressText: {fileID: 656554246}
   answerSlotParent: {fileID: 656554245}
