@@ -32,6 +32,9 @@ public class SpeedQuizGameTMP : MonoBehaviour
     private bool isGameActive = false;
     private int currentQuestionIndex = 0;
 
+    [Header("Panel Control")]
+    public GameObject panelToClose;
+
     void Start()
     {
         
@@ -56,7 +59,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
             if (timeRemaining <= 0f)
             {
                 isGameActive = false;
-                SceneManager.LoadScene("ChooseRoom"); // เปลี่ยนชื่อ Scene ให้ตรงกับที่ตั้งไว้ใน Build Settings
+                CloseOrOpenPanel(); // เปลี่ยนชื่อ Scene ให้ตรงกับที่ตั้งไว้ใน Build Settings
             }
         }
     }
@@ -162,10 +165,15 @@ public class SpeedQuizGameTMP : MonoBehaviour
         {
             // เมื่อคำถามหมด
             isGameActive = false;
-            SceneManager.LoadScene("ChooseRoom");
+            CloseOrOpenPanel();
         }
     }
+    void CloseOrOpenPanel()
+    {
+        if (panelToClose != null)
+            panelToClose.SetActive(false);
 
+    }
 
 
 }

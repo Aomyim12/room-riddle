@@ -13,7 +13,7 @@ public class SceneChanger : MonoBehaviour
     // Call this function from your button OnClick() event
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene("ChooseRoom");
+        SceneManager.LoadScene("GameRoom");
     }
     // Quit the game
     public void QuitGame()

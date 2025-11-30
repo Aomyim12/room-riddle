@@ -19,6 +19,7 @@ public class SortWord : MonoBehaviour
     public GameObject answerSlotPrefab;
     public GameObject letterButtonPrefab;
     public Button shuffleButton;
+    public GameObject panelToClose;
 
     private List<TextMeshProUGUI> answerSlots = new List<TextMeshProUGUI>();
     private List<Button> letterButtons = new List<Button>();
@@ -156,6 +157,7 @@ public class SortWord : MonoBehaviour
     }
     void ReturnMenu()
     {
-        SceneManager.LoadScene("Menu");
+        if (panelToClose != null)
+            panelToClose.SetActive(false);
     }
 }

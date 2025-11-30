@@ -11,6 +11,7 @@ public class MatchingGameManager : MonoBehaviour
 
     [Header("UI")]
     public TMP_Text timerText; // ตัวแสดงเวลา
+    public GameObject panelToClose;
 
     [Header("Game Elements")]
     public DropSlot[] dropSlots; // DropSlot ทั้งหมดในฉาก
@@ -60,12 +61,12 @@ public class MatchingGameManager : MonoBehaviour
     {
         gameEnded = true;
         timerText.text = reason;
-        Invoke(nameof(LoadNextScene), 2f); // หน่วง 2 วิค่อยไป
+        Invoke(nameof(ClosePanel), 2f);   // หน่วง 2 วิแล้วค่อยปิด panel
     }
 
-    void LoadNextScene()
+    void ClosePanel()
     {
-        SceneManager.LoadScene("ChooseRoom");
+        panelToClose.SetActive(false);    // ปิด Panel
     }
 
 }
