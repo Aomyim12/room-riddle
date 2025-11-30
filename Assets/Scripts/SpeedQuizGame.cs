@@ -28,7 +28,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
     
 
     private int score = 0;
-    private float timeRemaining = 30f;
+    private float timeRemaining = 100f;
     private bool isGameActive = false;
     private int currentQuestionIndex = 0;
 
@@ -37,7 +37,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
 
     void Start()
     {
-        
+
 
         // ตั้งค่าปุ่มคำตอบ
         for (int i = 0; i < answerButtons.Length; i++)
@@ -46,7 +46,6 @@ public class SpeedQuizGameTMP : MonoBehaviour
             answerButtons[i].onClick.AddListener(() => AnswerButtonClicked(buttonIndex));
         }
 
-        StartGame();
     }
 
     void Update()
@@ -59,7 +58,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
             if (timeRemaining <= 0f)
             {
                 isGameActive = false;
-                CloseOrOpenPanel(); // เปลี่ยนชื่อ Scene ให้ตรงกับที่ตั้งไว้ใน Build Settings
+                LoadMenuScene(); // เปลี่ยนชื่อ Scene ให้ตรงกับที่ตั้งไว้ใน Build Settings
             }
         }
     }
@@ -67,7 +66,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
     public void StartGame()
     {
         score = 0;
-        timeRemaining = 30f;
+        timeRemaining = 100f;
         isGameActive = true;
         scoreText.text = $"Score: {score}";
 
@@ -137,7 +136,7 @@ public class SpeedQuizGameTMP : MonoBehaviour
         {
             score = Mathf.Max(0, score - 5);
             scoreText.text = $"Score: {score}";
-            timeRemaining = Mathf.Max(1f, timeRemaining - 2f);
+            //timeRemaining = Mathf.Max(1f, timeRemaining - 2f);
 
             answerTexts[buttonIndex].color = Color.red;
             answerTexts[currentQuestion.correctAnswerIndex].color = Color.green;
@@ -174,6 +173,17 @@ public class SpeedQuizGameTMP : MonoBehaviour
             panelToClose.SetActive(false);
 
     }
+    void LoadMenuScene()
+    {
+        // ต้องแน่ใจว่าได้เพิ่ม Scene ที่ชื่อ "MainMenu" ไว้ใน Build Settings แล้ว
+        SceneManager.LoadScene("Menu");
+    }
+    public void OpenPanelAndStart()
+    {
+        if (panelToClose != null)
+            panelToClose.SetActive(true);
 
+        StartGame();
+    }
 
 }
