@@ -5278,9 +5278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - questionText: What is the green pigment in plants that plays an important role
-      in photosynthesis?
-    correctAnswer: CHLOROPHYLL
+  - questionText: Which type of gas is filled into balloons to make them float?
+    correctAnswer: HELIUM
   - questionText: What do plants release into the air during photosynthesis?
     correctAnswer: OXYGEN
   - questionText: Which part of the plant absorbs water and minerals from the soil?
@@ -6490,12 +6489,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - questionText: 200+40+5=
-    correctAnswer: 245
-  - questionText: If it is 2:00 PM now, what time will it be in 3 hours?
-    correctAnswer: 5PM
-  - questionText: "(2\xD7100) + (6\xD710) + (9\xD71) ="
-    correctAnswer: 269
+  - questionText: How many sides does a pentagon have?
+    correctAnswer: FIVE
+  - questionText: What 3.14 called in math?
+    correctAnswer: PI
+  - questionText: Which shape has no angles?
+    correctAnswer: CIRCLE
   questionText: {fileID: 656554247}
   progressText: {fileID: 656554246}
   answerSlotParent: {fileID: 656554245}
